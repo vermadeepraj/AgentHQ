@@ -1,0 +1,11 @@
+node_modules/
+dist/
+scripts/out/
+.env
+.env.*
+*.log
+.DS_Store
+.vercel
+!.env.example
+/.claude/
+docs/*.pdf

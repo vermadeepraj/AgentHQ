@@ -1,0 +1,37 @@
+import { at } from '../clock.js'
+
+// Ticket tuple: [key, title, type, effort (skill-1 minutes), deps, priority 1–3, flags]
+export default {
+  id: 'mvp',
+  title: 'Startup MVP',
+  client: 'Chai & Co.',
+  difficulty: 'Tutorial',
+  brief: 'Launch a landing page with online ordering for Chai & Co., a modern Indian tea brand.',
+  blurb: 'Your first project. Watch the team plan, build and ship — step in when they need you.',
+  start: at(1, 9, 0),
+  deadline: at(2, 18, 0),
+  budget: 20000,
+  kickoff: true,
+  scoring: 'delivery',
+  site: { name: 'Chai & Co.', tagline: 'Small-batch chai, brewed fresh.', accent: '#e08a3c', bg: '#24160f', ink: '#fff4e6', nav: ['Menu', 'Our story', 'Order'] },
+  tickets: [
+    ['brief', 'Brand brief & goals', 'product', 45, [], 3],
+    ['flows', 'User flows & sitemap', 'product', 60, ['brief'], 3],
+    ['copy', 'Landing page copy', 'product', 75, ['brief'], 2],
+    ['wire', 'Wireframes', 'design', 100, ['flows'], 3],
+    ['ds', 'Visual design system', 'design', 120, ['brief'], 2],
+    ['mock', 'Hero & menu mockups', 'design', 105, ['wire', 'ds'], 3],
+    ['ci', 'Repo + CI/CD pipeline', 'ops', 75, [], 2],
+    ['staging', 'Staging environment', 'ops', 60, ['ci'], 1],
+    ['api', 'Menu & orders API', 'backend', 150, ['flows'], 3],
+    ['pay', 'Payments integration', 'backend', 120, ['api'], 2],
+    ['scaffold', 'App scaffold & routing', 'frontend', 75, ['ci'], 2],
+    ['components', 'UI component library', 'frontend', 120, ['ds', 'scaffold'], 2],
+    ['seo', 'SEO, analytics & meta tags', 'frontend', 60, ['scaffold'], 1],
+    ['hero', 'Hero + menu sections', 'frontend', 120, ['mock', 'components', 'copy'], 3],
+    ['cart', 'Cart & checkout UI', 'frontend', 120, ['mock', 'api', 'components'], 3],
+    ['polish', 'Responsive polish & motion', 'frontend', 70, ['hero'], 1],
+    ['wire-pay', 'Connect checkout to payments', 'frontend', 60, ['cart', 'pay'], 2],
+    ['launch', 'Deploy to production', 'ops', 30, ['*'], 3, { launch: true }],
+  ],
+}
