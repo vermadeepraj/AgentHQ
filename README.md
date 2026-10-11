@@ -1,5 +1,7 @@
 # AgentHQ
 
+**▶ Play it live: https://agenthq-three.vercel.app**
+
 A playable 3D office where a team of AI agents takes a brief and ships it — kickoff at the
 whiteboard, tickets on the Kanban, design handoffs, code reviews, QA bounces, a deploy, and a
 launch party around the lobby screen. **You're the CEO**: assign work, order pizza, hire
